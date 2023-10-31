@@ -32,5 +32,8 @@ class PagesController < ApplicationController
   end
 
   def codice
+    @users = User.all
+    @userx = User.where(country: "Yugioh").or(User.where(country: "Pokemon"))
+
   end
 end

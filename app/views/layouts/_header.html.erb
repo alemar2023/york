@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item  "> <%= link_to "Item", items_path , class: "nav-link" %>  </li>
-          <li class="nav-item  "> <%= link_to "Espansioni", catitems_path , class: "nav-link" %>  </li>
+          <li class="nav-item  "> <%= link_to "Espansioni", codice_path , class: "nav-link" %>  </li>
           <li class="nav-item  "> <%= link_to "Cards", cards_path , class: "nav-link" %>  </li>
           <li class="nav-item  "> <%= link_to "Forms", forms_path , class: "nav-link" %>  </li>
           <li class="nav-item  "> <%= link_to "Grid", grids_path , class: "nav-link" %>  </li>
@@ -36,8 +36,30 @@
 
         </ul>
         <form class="">
-          <a class="btn btn-outline-primary mr-2" href="#">Login</a>
-          <a class="btn btn-outline-success" href="#">Become member</a>
+          <% if user_signed_in? %>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 dropstart">
+            <li class="nav-item dropdown"  style="padding-right:10px;">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+              </a>
+              <ul class="dropdown-menu">
+                <li> <%= link_to "Your Account", slides_path , class: "dropdown-item" %> </li>
+                <li><a class="dropdown-item disabled" href="#" disabled> Your Orders</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item  disabled" href="#" disabled> Contact Us</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li ><%= link_to "Logout" , destroy_user_session_path, method: :delete , class: "dropdown-item text-danger" %></li>
+              </ul>
+            </li>
+              <li class="nav-item dropdown">
+              <a></a>
+              </li>
+            </ul>
+
+          <% else %>
+            <a><%= link_to "Login" , new_user_session_path, class: "btn btn-outline-primary mr-2" %></a>
+            <a><%= link_to "Become member" , new_user_registration_path,  class: "btn btn-outline-primary mr-2"  %></a>
+          <% end  %>
         </form>
 
       </div>

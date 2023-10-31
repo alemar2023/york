@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :items
+  resources :expansions
+  resources :areas
+  resources :trades
+
+
 
   get 'xuserx' => "pages#home"
 
@@ -36,7 +42,6 @@ Rails.application.routes.draw do
   get "video" => 'pages#video'
   get "codice" => 'pages#codice'
   get "items" => 'items#index'
-  get "catitems" => 'pages#codice'
 
   root "pages#home"
 end
