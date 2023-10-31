@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'xuserx' => "pages#home"
+
+  #get "member/:id" => 'members#show'
+  get "members:id",  to: 'members#show', as: 'member'
+
+  devise_for :users
   get 'pages/home'
   get 'pages/about'
   get 'pages/forms'
@@ -28,7 +35,7 @@ Rails.application.routes.draw do
   get "collapse" => 'pages#collapse'
   get "video" => 'pages#video'
   get "codice" => 'pages#codice'
-  get "items" => 'pages#codice'
+  get "items" => 'items#index'
   get "catitems" => 'pages#codice'
 
   root "pages#home"

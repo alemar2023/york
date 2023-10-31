@@ -1,15 +1,20 @@
-
+<style>
+  button{
+      margin:5px !important;
+      padding:5px !important;
+  }
+</style>
 
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<button id="btnaxel" type=button onclick="test(1)"> hello</button>
+<button class="btn btn-primary" id="btnaxel" type=button onclick="test(1)"> hello</button>
 
-<button type=button onclick="great()"> hello</button>
+<button class="btn btn-primary" type=button onclick="great()"> hello</button>
 <%= link_to 'Test', '#', onclick: "testFun()" %>
 <%= link_to 'Test', "javascript:testFun()" %>
 <div data-controller="alex">
 
-  <button data-action="click->alex#greet"> xx </button>
+  <button class="btn btn-primary" data-action="click->alex#greet"> xx </button>
 </div>
 
 <script type= text/javascript>
@@ -42,9 +47,9 @@
 <div id="options" data-controller="visibility">
   <h1>Toggle Visibility</h1>
 
-  <button data-action="visibility#showTargets">Show All Elements</button>
-  <button data-action="visibility#hideTargets">Hide All Elements</button>
-  <button data-action="visibility#toggleTargets">Toggle Element Visibility</button>
+  <button class="btn btn-primary" data-action="visibility#showTargets">Show All Elements</button>
+  <button class="btn btn-primary" data-action="visibility#hideTargets">Hide All Elements</button>
+  <button class="btn btn-primary" data-action="visibility#toggleTargets">Toggle Element Visibility</button>
 
   <p data-visibility-target="hideable">The Flamboyent Thing #1<p/>
   <p data-visibility-target="hideable" hidden>The Slightly Stealthy Thing #2<p/>
